@@ -1,0 +1,62 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:views="clr-namespace:HockeyClub.View"
+    xmlns:vm="clr-namespace:HockeyClub.ViewModel"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="HockeyClub.MainWindow"
+    Title="Hockey Club" Height="400" Width="700">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:ButtonPanelViewModel}">
+            <views:ButtonPanelView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:CommandViewModel}">
+            <views:CommandView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:HockeyPlayerViewModel}">
+            <views:HockeyPlayerView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:StickViewModel}">
+            <views:StickView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:UsageStickViewModel}">
+            <views:UsageStick/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:StatisticalDataViewModel}">
+            <views:StatisticalDataView/>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="34*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="659*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.RowSpan="3" Margin="0,27,0,0">
+            <Button Content="Добавить" Width="108" Height="36" Margin="0,10,0,10" Command="{Binding ButtonPanelViewModel.AddCommand}"/>
+            <Button Content="Изменить" Width="108" Height="36"  Margin="0,10,0,10" Command="{Binding ButtonPanelViewModel.UpdateCommand}"/>
+            <Button Content="Удалить" Width="108" Height="36"  Margin="0,10,0,10" Command="{Binding ButtonPanelViewModel.DeleteCommand}"/>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Margin="123,0,0,0" Orientation="Horizontal">
+            <Button Content="Команда" Margin="10,0,0,0" Width="75" Height="20" Command="{Binding CommandViewModel.ShowHockeyPlayers}"/>
+            <Button Content="Клюшки" Margin="10,0,0,0" Width="75" Height="20" Command="{Binding CommandViewModel.ShowSticks}"/>
+            <Button Content="Используемые клюшки" Margin="10,0,0,0" Width="150" Height="20" Command="{Binding CommandViewModel.ShowUsageSticks}"/>
+            <Button Content="Статистика" Width="75" Height="20" Margin="10,0,0,0" Command="{Binding CommandViewModel.ShowStatistics}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="123,2,0,0" Orientation="Horizontal"/>
+        <DockPanel Grid.Column="1" LastChildFill="False" Grid.Row="1">
+            <ContentPresenter Content="{Binding CurrentViewModel}"/>
+        </DockPanel>
+    </Grid>
+</Window>

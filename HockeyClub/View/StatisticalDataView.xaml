@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="HockeyClub.View.StatisticalDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HockeyClub.View" 
+             xmlns:viewmodel="clr-namespace:HockeyClub.ViewModel">
+    <StackPanel>
+        <TextBlock Text="Средний возраст команды:"/>
+        <TextBlock Text="{Binding AverageAge}"/>
+        <TextBlock Text="Среднее время жизни клюшки у хоккеиста {id=3}:"/>
+        <TextBlock Text="{Binding AverageStickLife}"/>
+        <TextBlock Text="Список игроков и их количества клюшек"/>
+        <ListBox ItemsSource="{Binding HockeyPlayers}" Width="250" Height="200"/>
+    </StackPanel>
+</UserControl>

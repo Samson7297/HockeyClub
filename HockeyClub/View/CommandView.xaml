@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="HockeyClub.View.CommandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HockeyClub.View"
+             mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal">
+        <Button Content="Команда" Command="{Binding GetAllHockeyPlayers}" />
+        <Button Content="Клюшки" Command="{Binding GetAllSticks}" />
+        <Button Content="Используемые клюшки" Command="{Binding GetAllUsageSticks}" />
+    </StackPanel>
+</UserControl>

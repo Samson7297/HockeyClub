@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="HockeyClub.View.StickView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HockeyClub.View" 
+             xmlns:viewModel="clr-namespace:HockeyClub.ViewModel">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Sticks}" SelectedItem="{Binding SelectedStick}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Марка" Binding="{Binding Brand}" />
+                <DataGridTextColumn Header="Модель" Binding="{Binding Model}" />
+                <DataGridTextColumn Header="Жесткость" Binding="{Binding Flex}" />
+                <DataGridTextColumn Header="Загиб" Binding="{Binding Bend}" />
+                <DataGridTextColumn Header="Хват" Binding="{Binding Grip}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

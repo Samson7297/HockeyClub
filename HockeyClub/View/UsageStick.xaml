@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="HockeyClub.View.UsageStick"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HockeyClub.View" 
+             xmlns:viewModel="clr-namespace:HockeyClub.ViewModel">
+
+    <Grid>
+        <DataGrid ItemsSource="{Binding UsageSticks}" SelectedItem="{Binding SelectedUsageStick}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding HockeyPlayer.GameNumber}" />
+                <DataGridTextColumn Header="Игрок" Binding="{Binding HockeyPlayer.FullName}" />
+                <DataGridTextColumn Header="Бренд" Binding="{Binding Stick.Brand}" />
+                <DataGridTextColumn Header="Модель" Binding="{Binding Stick.Model}" />
+                <DataGridTextColumn Header="Жесткость" Binding="{Binding Stick.Flex}" />
+                <DataGridTextColumn Header="Загиб" Binding="{Binding Stick.Bend}" />
+                <DataGridTextColumn Header="Хват" Binding="{Binding Stick.Grip}" />
+                <DataGridTextColumn Header="Дата выдачи" Binding="{Binding IssueDate}" />
+                <DataGridTextColumn Header="Дата возврата" Binding="{Binding ReturnDate}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

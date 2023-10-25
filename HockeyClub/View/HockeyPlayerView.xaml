@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="HockeyClub.View.HockeyPlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HockeyClub.View" 
+             xmlns:viewModel="clr-namespace:HockeyClub.ViewModel">
+    <Grid>
+        <DataGrid ItemsSource="{Binding HockeyPlayers}" SelectedItem="{Binding SelectedPlayer}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding GameNumber}" />
+                <DataGridTextColumn Header="Игрок" Binding="{Binding FullName}" />
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateBirthday}" />
+                <DataGridTextColumn Header="Амплуа" Binding="{Binding Role}" />
+                <DataGridTextColumn Header="Рост" Binding="{Binding Height}" />
+                <DataGridTextColumn Header="Размер" Binding="{Binding Size}" />
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding PhoneNumber}" />
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
